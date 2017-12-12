@@ -7,7 +7,7 @@ export default {
   async asyncData({ payload }) {
     if (payload) {
       // Payload should be passed via nuxt's `.generate()` and contain:
-      console.log('Payload hit! name:', payload.name);
+      console.log('Payload hit in Vue component. name:', payload.name);
       return payload;
     }
   },
