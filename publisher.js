@@ -5,22 +5,25 @@ const { Nuxt, Builder, Generator } = require('nuxt');
 module.exports = async function(request, reply) {
   try {
     const getElapsed = hirestime();
-    const nuxtConfig = require('./nuxt.config.js')();
-    nuxtConfig.dev = false;
+    const { nuxtConfigFn } = require('./nuxt.config.js');
 
     const { payload } = request;
     const { name } = payload;
     const uploadFolderPath = Path.join(__dirname, `./dist/${name}`);
 
-    nuxtConfig.generate.dir = uploadFolderPath;
-    nuxtConfig.generate.routes = [
-      {
-        route: '/',
-        payload,
-      },
-    ];
-
     console.log(`About to generate page: ${name}`);
+    const nuxtConfig = nuxtConfigFn({
+      dev: false,
+      generate: {
+        dir: uploadFolderPath,
+        routes: [
+          {
+            route: '/',
+            payload,
+          },
+        ],
+      },
+    });
     const nuxt = new Nuxt(nuxtConfig);
     const builder = new Builder(nuxt);
     const generator = new Generator(nuxt, builder);
