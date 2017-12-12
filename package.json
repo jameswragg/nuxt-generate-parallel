@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-generate-parallel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nuxt:build": "nuxt build",
+    "start": "rimraf dist && npm run nuxt:build && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameswragg/nuxt-generate-parallel.git"
+  },
+  "author": "James Wragg <james.wragg@madgex.com> (http://www.madgex.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jameswragg/nuxt-generate-parallel/issues"
+  },
+  "homepage": "https://github.com/jameswragg/nuxt-generate-parallel#readme",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "hapi": "^16.6.2",
+    "hirestime": "^3.2.1",
+    "nuxt": "^1.0.0-rc11",
+    "rimraf": "^2.6.2"
+  }
+}
