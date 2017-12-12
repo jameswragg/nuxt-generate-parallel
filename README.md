@@ -2,6 +2,10 @@
 
 Test repo for debugging parallel generate requests with nuxt.js
 
+*UPDATE: **Solved** by creating closure on nuxt.config by returning as a function*
+
+---
+
 ## Setup
 
 ``` bash
