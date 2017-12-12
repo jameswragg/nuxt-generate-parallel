@@ -5,7 +5,7 @@ const { Nuxt, Builder, Generator } = require('nuxt');
 module.exports = async function(request, reply) {
   try {
     const getElapsed = hirestime();
-    const nuxtConfig = require('./nuxt.config.js');
+    const nuxtConfig = require('./nuxt.config.js')();
     nuxtConfig.dev = false;
 
     const { payload } = request;

@@ -1,9 +1,11 @@
-module.exports = {
-  generate: {
-    dir: 'dist/should-be-overridden',
-    minify: {
-      removeOptionalTags: false,
-      collapseWhitespace: false,
+module.exports = function() {
+  return {
+    generate: {
+      dir: 'dist/should-be-overridden',
+      minify: {
+        removeOptionalTags: false,
+        collapseWhitespace: false,
+      },
     },
-  }
-}
+  };
+};
